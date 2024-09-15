@@ -1,0 +1,33 @@
+info:
+  app:
+    name: Buuking.com
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus,health
+
+springdoc:
+  swagger-ui:
+    path: /
+
+spring:
+  application:
+    name: buuking-dot-com
+  jpa:
+    open-in-view: false
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/buuking-dot-com
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: buuking
+    password: gnikuub
+    flyway:
+      user: buuking
+      password: gnikuub

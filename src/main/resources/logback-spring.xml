@@ -1,0 +1,61 @@
+<configuration>
+    <springProfile name="default">
+        <!-- Define the log pattern property -->
+        <property name="CONSOLE_LOG_PATTERN"
+                  value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%highlight(%-5level)] [%thread] %cyan(%logger{36}) - %msg%rEx%n"/>
+
+        <!-- Define the CONSOLE appender and use the pattern -->
+        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            </encoder>
+        </appender>
+
+        <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+        <root>
+            <level value="INFO"/>
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="docker">
+        <!-- Define properties for log file locations -->
+        <springProperty scope="context" name="APP_NAME" source="spring.application.name"/>
+        <springProperty scope="context" name="ENV" source="spring.profiles.active"/>
+
+        <property name="CONSOLE_LOG_PATTERN"
+                  value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%highlight(%-5level)] [%thread] %cyan(%logger{36}) - %msg%rEx%n"/>
+
+        <!-- Define the CONSOLE appender and use the pattern -->
+        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            </encoder>
+        </appender>
+
+        <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+        <appender name="LOKI" class="com.github.loki4j.logback.Loki4jAppender">
+            <!-- (1) -->
+            <http>
+                <url>http://loki:3100/loki/api/v1/push</url>
+            </http>
+            <format>
+                <!-- (2) -->
+                <label>
+                    <pattern>service=${APP_NAME},host=${HOSTNAME},level=%level,env=${ENV}</pattern>
+                    <readMarkers>true</readMarkers>
+                </label>
+                <message class="com.github.loki4j.logback.JsonLayout" />
+            </format>
+
+        </appender>
+
+        <!-- Root logger configuration -->
+        <root level="INFO">
+            <appender-ref ref="CONSOLE" />
+            <appender-ref ref="LOKI"/>
+        </root>
+    </springProfile>
+</configuration>
