@@ -52,7 +52,7 @@ public class RoomManagementEndpoint implements CrudOperation<RoomRequest, RoomRe
     @PutMapping("/{identifier}")
     @Operation(summary = "Update room", description = "Update room given its id")
     public RoomResponse update(@SpanAttribute @PathVariable @Valid @NotNull UUID identifier,
-            @Valid @NotNull @RequestBody RoomRequest request) {
+                               @Valid @NotNull @RequestBody RoomRequest request) {
         return roomService.update(identifier, request);
     }
 

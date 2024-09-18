@@ -1,0 +1,1 @@
+ALTER TABLE Reservation add column active BOOLEAN NOT NULL;

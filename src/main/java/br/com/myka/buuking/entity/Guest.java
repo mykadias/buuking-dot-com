@@ -1,11 +1,18 @@
 package br.com.myka.buuking.entity;
 
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.JdbcTypeCode;
 
 import java.sql.Types;
-import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -14,8 +21,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Property implements BuukingEntity {
-
+public class Guest implements BuukingEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @JdbcTypeCode(Types.CHAR)
@@ -23,7 +29,4 @@ public class Property implements BuukingEntity {
 
     @Column(nullable = false, length = 150)
     private String name;
-
-    @OneToMany(mappedBy = "property", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Room> rooms;
 }

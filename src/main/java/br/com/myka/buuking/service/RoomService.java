@@ -62,11 +62,16 @@ public class RoomService {
         return roomRepository.findById(roomId).orElseThrow(() -> new RoomNotFoundException(roomId));
     }
 
+    public List<Room> findAllAvailableRoomsInAnyProperty(LocalDate checkIn, LocalDate checkOut){
+        return findAllAvailableRooms(checkIn, checkOut, null, null, null, null);
+    }
+
     public List<Room> findAllAvailableRooms(LocalDate checkIn,
                                             LocalDate checkOut,
                                             String hotelName,
                                             UUID roomId,
-                                            UUID reservationId) {
+                                            UUID reservationId,
+                                            UUID propertyId) {
         return roomRepository.findAllAvailableRooms(checkIn,
                 checkOut,
                 hotelName,
@@ -75,6 +80,14 @@ public class RoomService {
                         .orElse(null),
                 Optional.ofNullable(reservationId)
                         .map(UUID::toString)
-                        .orElse(null));
+                        .orElse(null),
+                Optional.ofNullable(propertyId)
+                        .map(UUID::toString)
+                        .orElse(null)
+        );
+    }
+
+    public RoomResponse convertToRoomResponse(Room room){
+        return roomConverter.convert(room);
     }
 }

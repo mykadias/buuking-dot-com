@@ -65,3 +65,17 @@ public class ReservationManagementEndpoint implements CrudOperation<ReservationR
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -60,7 +60,10 @@ services:
   grafana:
     image: grafana/grafana:10.2.2
     volumes:
-      - ./config/grafana/datasource.yaml:/etc/grafana/provisioning/datasources/datasources.yaml
+      - ./config/grafana/dashboards/observability-dashboard.json:/var/lib/grafana/dashboards/observability-dashboard.json
+      - ./config/grafana/provisioning/datasource.yaml:/etc/grafana/provisioning/datasources/datasources.yaml
+      - ./config/grafana/provisioning/dashboard.yaml:/etc/grafana/provisioning/dashboards/main.yaml
+
     environment:
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin

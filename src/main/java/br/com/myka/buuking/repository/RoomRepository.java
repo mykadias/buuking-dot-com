@@ -31,6 +31,13 @@ public interface RoomRepository extends JpaRepository<Room, UUID> {
             )
                 and (:propertyName is null or UPPER(Property.name) like UPPER(:propertyName))
                 and (:roomId is null or Room.id = :roomId)
+                and (:propertyId is null or Property.id = :propertyId)
+            order by Room.pricePerNight
             """, nativeQuery = true)
-    List<Room> findAllAvailableRooms(LocalDate checkIn, LocalDate checkOut, String propertyName, String roomId, String reservationId);
+    List<Room> findAllAvailableRooms(LocalDate checkIn,
+                                     LocalDate checkOut,
+                                     String propertyName,
+                                     String roomId,
+                                     String reservationId,
+                                     String propertyId);
 }

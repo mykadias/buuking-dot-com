@@ -4,17 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
 import java.util.UUID;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ReservationResponse implements BuukingResponse {
-    private UUID id;
-    private UUID roomId;
-    private LocalDate checkIn;
-    private LocalDate checkOut;
-    private UUID guestId;
-}
+public class GuestResponse implements BuukingResponse {
 
+    private UUID id;
+
+    private String name;
+}
