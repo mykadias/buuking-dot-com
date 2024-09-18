@@ -64,4 +64,5 @@ Or
 | Buuking.com health   | http://localhost:8080/actuator/health | Always         |
 | Grafana              | localhost:3000                        | Only Docker    |
 
-[Download Postman Collection](https://github.com/mykadias/buuking-dot-com/blob/main/Buuking.com.postman_collection.json)
+<img align="center" alt="Myka-Postman" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" />[Download Postman Collection](https://github.com/mykadias/buuking-dot-com/blob/main/Buuking.com.postman_collection.json)
+
