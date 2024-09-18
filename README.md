@@ -63,3 +63,5 @@ Or
 | Buuking.com actuator | localhost:8080/actuator               | Always         |
 | Buuking.com health   | http://localhost:8080/actuator/health | Always         |
 | Grafana              | localhost:3000                        | Only Docker    |
+
+[Download Postman Collection](https://github.com/mykadias/buuking-dot-com/blob/main/Buuking.com.postman_collection.json)
