@@ -1,0 +1,2157 @@
+{
+	"info": {
+		"_postman_id": "49b26d62-5e73-4d75-b3c7-39f6244f72f2",
+		"name": "Buuking.com",
+		"description": "Application manager.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19157366"
+	},
+	"item": [
+		{
+			"name": "reservation",
+			"item": [
+				{
+					"name": "update-reservation",
+					"item": [
+						{
+							"name": "{identifier}",
+							"item": [
+								{
+									"name": "Update a reservation",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"checkIn\": \"<date>\",\n  \"checkOut\": \"<date>\",\n  \"guestId\": \"<uuid>\",\n  \"payment\": {\n    \"creditCardNumber\": \"<string>\"\n  },\n  \"roomId\": \"<uuid>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/reservation/update-reservation/:identifier",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"reservation",
+												"update-reservation",
+												":identifier"
+											],
+											"variable": [
+												{
+													"key": "identifier",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Update a reservation by id for a room"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"checkIn\": \"<date>\",\n  \"checkOut\": \"<date>\",\n  \"guestId\": \"<uuid>\",\n  \"payment\": {\n    \"creditCardNumber\": \"<string>\"\n  },\n  \"roomId\": \"<uuid>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/reservation/update-reservation/:identifier",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"reservation",
+														"update-reservation",
+														":identifier"
+													],
+													"variable": [
+														{
+															"key": "identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"reservationExchangeOnHoldId\": \"<uuid>\",\n  \"oldRoom\": {\n    \"id\": \"<uuid>\",\n    \"roomNumber\": \"<string>\",\n    \"pricePerNight\": \"<number>\",\n    \"propertyId\": \"<uuid>\"\n  },\n  \"newRoom\": {\n    \"id\": \"<uuid>\",\n    \"roomNumber\": \"<string>\",\n    \"pricePerNight\": \"<number>\",\n    \"propertyId\": \"<uuid>\"\n  },\n  \"acceptLink\": \"<string>\",\n  \"declineLink\": \"<string>\",\n  \"expirationDate\": \"<date>\",\n  \"message\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "reserve-room",
+					"item": [
+						{
+							"name": "Reserve a room",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"checkIn\": \"<date>\",\n  \"checkOut\": \"<date>\",\n  \"guestId\": \"<uuid>\",\n  \"payment\": {\n    \"creditCardNumber\": \"<string>\"\n  },\n  \"roomId\": \"<uuid>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/reservation/reserve-room",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reservation",
+										"reserve-room"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"checkIn\": \"<date>\",\n  \"checkOut\": \"<date>\",\n  \"guestId\": \"<uuid>\",\n  \"payment\": {\n    \"creditCardNumber\": \"<string>\"\n  },\n  \"roomId\": \"<uuid>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/reservation/reserve-room",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"reservation",
+												"reserve-room"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<uuid>\",\n  \"roomId\": \"<uuid>\",\n  \"checkIn\": \"<date>\",\n  \"checkOut\": \"<date>\",\n  \"guestId\": \"<uuid>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "find-available-room",
+					"item": [
+						{
+							"name": "Find all available rooms",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "guestId",
+										"value": "<uuid>"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/reservation/find-available-room?checkin=<date>&checkout=<date>&hotelName=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reservation",
+										"find-available-room"
+									],
+									"query": [
+										{
+											"key": "checkin",
+											"value": "<date>",
+											"description": "(Required) "
+										},
+										{
+											"key": "checkout",
+											"value": "<date>",
+											"description": "(Required) "
+										},
+										{
+											"key": "hotelName",
+											"value": "<string>"
+										}
+									]
+								},
+								"description": "Find all available rooms by checkin, checkout and an optional hotelName"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "guestId",
+												"value": "<uuid>"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/reservation/find-available-room?checkin=<date>&checkout=<date>&hotelName=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"reservation",
+												"find-available-room"
+											],
+											"query": [
+												{
+													"key": "checkin",
+													"value": "<date>",
+													"description": "(Required) "
+												},
+												{
+													"key": "checkout",
+													"value": "<date>",
+													"description": "(Required) "
+												},
+												{
+													"key": "hotelName",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"properties\": [\n    {\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"rooms\": [\n        {\n          \"id\": \"<uuid>\",\n          \"roomNumber\": \"<string>\",\n          \"pricePerNight\": \"<number>\",\n          \"propertyId\": \"<uuid>\"\n        },\n        {\n          \"id\": \"<uuid>\",\n          \"roomNumber\": \"<string>\",\n          \"pricePerNight\": \"<number>\",\n          \"propertyId\": \"<uuid>\"\n        }\n      ]\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"rooms\": [\n        {\n          \"id\": \"<uuid>\",\n          \"roomNumber\": \"<string>\",\n          \"pricePerNight\": \"<number>\",\n          \"propertyId\": \"<uuid>\"\n        },\n        {\n          \"id\": \"<uuid>\",\n          \"roomNumber\": \"<string>\",\n          \"pricePerNight\": \"<number>\",\n          \"propertyId\": \"<uuid>\"\n        }\n      ]\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "cancel-reservation",
+					"item": [
+						{
+							"name": "{identifier}",
+							"item": [
+								{
+									"name": "Cancel reservation",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/reservation/cancel-reservation/:identifier",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"reservation",
+												"cancel-reservation",
+												":identifier"
+											],
+											"variable": [
+												{
+													"key": "identifier",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Cancel a reservation by id for a room"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/reservation/cancel-reservation/:identifier",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"reservation",
+														"cancel-reservation",
+														":identifier"
+													],
+													"variable": [
+														{
+															"key": "identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "reservation-on-hold",
+			"item": [
+				{
+					"name": "accept",
+					"item": [
+						{
+							"name": "{identifier}",
+							"item": [
+								{
+									"name": "Accept reservation on hold",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"creditCardNumber\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/reservation-on-hold/accept/:identifier",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"reservation-on-hold",
+												"accept",
+												":identifier"
+											],
+											"variable": [
+												{
+													"key": "identifier",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"creditCardNumber\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/reservation-on-hold/accept/:identifier",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"reservation-on-hold",
+														"accept",
+														":identifier"
+													],
+													"variable": [
+														{
+															"key": "identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "decline",
+					"item": [
+						{
+							"name": "{identifier}",
+							"item": [
+								{
+									"name": "Decline a reservation on hold",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/reservation-on-hold/decline/:identifier",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"reservation-on-hold",
+												"decline",
+												":identifier"
+											],
+											"variable": [
+												{
+													"key": "identifier",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/reservation-on-hold/decline/:identifier",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"reservation-on-hold",
+														"decline",
+														":identifier"
+													],
+													"variable": [
+														{
+															"key": "identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Find all Reservation on hold for a customer",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "guestId",
+								"value": "<uuid>",
+								"description": "(Required) "
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/reservation-on-hold",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservation-on-hold"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "guestId",
+										"value": "<uuid>",
+										"description": "(Required) "
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/reservation-on-hold",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reservation-on-hold"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"reservationExchangeOnHoldId\": \"<uuid>\",\n    \"oldRoom\": {\n      \"id\": \"<uuid>\",\n      \"roomNumber\": \"<string>\",\n      \"pricePerNight\": \"<number>\",\n      \"propertyId\": \"<uuid>\"\n    },\n    \"newRoom\": {\n      \"id\": \"<uuid>\",\n      \"roomNumber\": \"<string>\",\n      \"pricePerNight\": \"<number>\",\n      \"propertyId\": \"<uuid>\"\n    },\n    \"acceptLink\": \"<string>\",\n    \"declineLink\": \"<string>\",\n    \"expirationDate\": \"<date>\",\n    \"message\": \"<string>\"\n  },\n  {\n    \"reservationExchangeOnHoldId\": \"<uuid>\",\n    \"oldRoom\": {\n      \"id\": \"<uuid>\",\n      \"roomNumber\": \"<string>\",\n      \"pricePerNight\": \"<number>\",\n      \"propertyId\": \"<uuid>\"\n    },\n    \"newRoom\": {\n      \"id\": \"<uuid>\",\n      \"roomNumber\": \"<string>\",\n      \"pricePerNight\": \"<number>\",\n      \"propertyId\": \"<uuid>\"\n    },\n    \"acceptLink\": \"<string>\",\n    \"declineLink\": \"<string>\",\n    \"expirationDate\": \"<date>\",\n    \"message\": \"<string>\"\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "management",
+			"item": [
+				{
+					"name": "rooms",
+					"item": [
+						{
+							"name": "{identifier}",
+							"item": [
+								{
+									"name": "Get room by id",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/management/rooms/:identifier",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"management",
+												"rooms",
+												":identifier"
+											],
+											"variable": [
+												{
+													"key": "identifier",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Get all room by identifier"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/management/rooms/:identifier",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"management",
+														"rooms",
+														":identifier"
+													],
+													"variable": [
+														{
+															"key": "identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"roomNumber\": \"<string>\",\n  \"pricePerNight\": \"<number>\",\n  \"propertyId\": \"<uuid>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Update room",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"pricePerNight\": \"<number>\",\n  \"propertyId\": \"<uuid>\",\n  \"roomNumber\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/management/rooms/:identifier",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"management",
+												"rooms",
+												":identifier"
+											],
+											"variable": [
+												{
+													"key": "identifier",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Update room given its id"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"pricePerNight\": \"<number>\",\n  \"propertyId\": \"<uuid>\",\n  \"roomNumber\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/management/rooms/:identifier",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"management",
+														"rooms",
+														":identifier"
+													],
+													"variable": [
+														{
+															"key": "identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"roomNumber\": \"<string>\",\n  \"pricePerNight\": \"<number>\",\n  \"propertyId\": \"<uuid>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Delete room",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/management/rooms/:identifier",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"management",
+												"rooms",
+												":identifier"
+											],
+											"variable": [
+												{
+													"key": "identifier",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Delete room by its id"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/management/rooms/:identifier",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"management",
+														"rooms",
+														":identifier"
+													],
+													"variable": [
+														{
+															"key": "identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get all Rooms",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/management/rooms",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"management",
+										"rooms"
+									]
+								},
+								"description": "Retrieves a list of all rooms."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/management/rooms",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"management",
+												"rooms"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<uuid>\",\n    \"roomNumber\": \"<string>\",\n    \"pricePerNight\": \"<number>\",\n    \"propertyId\": \"<uuid>\"\n  },\n  {\n    \"id\": \"<uuid>\",\n    \"roomNumber\": \"<string>\",\n    \"pricePerNight\": \"<number>\",\n    \"propertyId\": \"<uuid>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Insert a room",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"pricePerNight\": \"<number>\",\n  \"propertyId\": \"<uuid>\",\n  \"roomNumber\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/management/rooms",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"management",
+										"rooms"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"pricePerNight\": \"<number>\",\n  \"propertyId\": \"<uuid>\",\n  \"roomNumber\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/management/rooms",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"management",
+												"rooms"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<uuid>\",\n  \"roomNumber\": \"<string>\",\n  \"pricePerNight\": \"<number>\",\n  \"propertyId\": \"<uuid>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "reservations",
+					"item": [
+						{
+							"name": "{identifier}",
+							"item": [
+								{
+									"name": "Get all Rooms",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/management/reservations/:identifier",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"management",
+												"reservations",
+												":identifier"
+											],
+											"variable": [
+												{
+													"key": "identifier",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Retrieves a list of all rooms."
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/management/reservations/:identifier",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"management",
+														"reservations",
+														":identifier"
+													],
+													"variable": [
+														{
+															"key": "identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"roomId\": \"<uuid>\",\n  \"checkIn\": \"<date>\",\n  \"checkOut\": \"<date>\",\n  \"guestId\": \"<uuid>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Update reservation",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"checkIn\": \"<date>\",\n  \"checkOut\": \"<date>\",\n  \"guestId\": \"<uuid>\",\n  \"payment\": {\n    \"creditCardNumber\": \"<string>\"\n  },\n  \"roomId\": \"<uuid>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/management/reservations/:identifier",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"management",
+												"reservations",
+												":identifier"
+											],
+											"variable": [
+												{
+													"key": "identifier",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Update reservation given its id"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"checkIn\": \"<date>\",\n  \"checkOut\": \"<date>\",\n  \"guestId\": \"<uuid>\",\n  \"payment\": {\n    \"creditCardNumber\": \"<string>\"\n  },\n  \"roomId\": \"<uuid>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/management/reservations/:identifier",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"management",
+														"reservations",
+														":identifier"
+													],
+													"variable": [
+														{
+															"key": "identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"roomId\": \"<uuid>\",\n  \"checkIn\": \"<date>\",\n  \"checkOut\": \"<date>\",\n  \"guestId\": \"<uuid>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Delete reservation",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/management/reservations/:identifier",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"management",
+												"reservations",
+												":identifier"
+											],
+											"variable": [
+												{
+													"key": "identifier",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Delete reservation by its id"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/management/reservations/:identifier",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"management",
+														"reservations",
+														":identifier"
+													],
+													"variable": [
+														{
+															"key": "identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get all reservations",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/management/reservations",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"management",
+										"reservations"
+									]
+								},
+								"description": "Retrieves a list of all reservations."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/management/reservations",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"management",
+												"reservations"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<uuid>\",\n    \"roomId\": \"<uuid>\",\n    \"checkIn\": \"<date>\",\n    \"checkOut\": \"<date>\",\n    \"guestId\": \"<uuid>\"\n  },\n  {\n    \"id\": \"<uuid>\",\n    \"roomId\": \"<uuid>\",\n    \"checkIn\": \"<date>\",\n    \"checkOut\": \"<date>\",\n    \"guestId\": \"<uuid>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Insert a reservation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"checkIn\": \"<date>\",\n  \"checkOut\": \"<date>\",\n  \"guestId\": \"<uuid>\",\n  \"payment\": {\n    \"creditCardNumber\": \"<string>\"\n  },\n  \"roomId\": \"<uuid>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/management/reservations",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"management",
+										"reservations"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"checkIn\": \"<date>\",\n  \"checkOut\": \"<date>\",\n  \"guestId\": \"<uuid>\",\n  \"payment\": {\n    \"creditCardNumber\": \"<string>\"\n  },\n  \"roomId\": \"<uuid>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/management/reservations",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"management",
+												"reservations"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<uuid>\",\n  \"roomId\": \"<uuid>\",\n  \"checkIn\": \"<date>\",\n  \"checkOut\": \"<date>\",\n  \"guestId\": \"<uuid>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "properties",
+					"item": [
+						{
+							"name": "{identifier}",
+							"item": [
+								{
+									"name": "Get property by id",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/management/properties/:identifier",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"management",
+												"properties",
+												":identifier"
+											],
+											"variable": [
+												{
+													"key": "identifier",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Retrieves property given its id."
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/management/properties/:identifier",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"management",
+														"properties",
+														":identifier"
+													],
+													"variable": [
+														{
+															"key": "identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"rooms\": [\n    {\n      \"id\": \"<uuid>\",\n      \"roomNumber\": \"<string>\",\n      \"pricePerNight\": \"<number>\",\n      \"propertyId\": \"<uuid>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"roomNumber\": \"<string>\",\n      \"pricePerNight\": \"<number>\",\n      \"propertyId\": \"<uuid>\"\n    }\n  ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Update property",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/management/properties/:identifier",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"management",
+												"properties",
+												":identifier"
+											],
+											"variable": [
+												{
+													"key": "identifier",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Update property given its id"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/management/properties/:identifier",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"management",
+														"properties",
+														":identifier"
+													],
+													"variable": [
+														{
+															"key": "identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"rooms\": [\n    {\n      \"id\": \"<uuid>\",\n      \"roomNumber\": \"<string>\",\n      \"pricePerNight\": \"<number>\",\n      \"propertyId\": \"<uuid>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"roomNumber\": \"<string>\",\n      \"pricePerNight\": \"<number>\",\n      \"propertyId\": \"<uuid>\"\n    }\n  ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Delete property",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/management/properties/:identifier",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"management",
+												"properties",
+												":identifier"
+											],
+											"variable": [
+												{
+													"key": "identifier",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Delete property by its id"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/management/properties/:identifier",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"management",
+														"properties",
+														":identifier"
+													],
+													"variable": [
+														{
+															"key": "identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get all properties",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/management/properties",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"management",
+										"properties"
+									]
+								},
+								"description": "Retrieves a list of all properties."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/management/properties",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"management",
+												"properties"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"rooms\": [\n      {\n        \"id\": \"<uuid>\",\n        \"roomNumber\": \"<string>\",\n        \"pricePerNight\": \"<number>\",\n        \"propertyId\": \"<uuid>\"\n      },\n      {\n        \"id\": \"<uuid>\",\n        \"roomNumber\": \"<string>\",\n        \"pricePerNight\": \"<number>\",\n        \"propertyId\": \"<uuid>\"\n      }\n    ]\n  },\n  {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"rooms\": [\n      {\n        \"id\": \"<uuid>\",\n        \"roomNumber\": \"<string>\",\n        \"pricePerNight\": \"<number>\",\n        \"propertyId\": \"<uuid>\"\n      },\n      {\n        \"id\": \"<uuid>\",\n        \"roomNumber\": \"<string>\",\n        \"pricePerNight\": \"<number>\",\n        \"propertyId\": \"<uuid>\"\n      }\n    ]\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Insert property",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/management/properties",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"management",
+										"properties"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/management/properties",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"management",
+												"properties"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"rooms\": [\n    {\n      \"id\": \"<uuid>\",\n      \"roomNumber\": \"<string>\",\n      \"pricePerNight\": \"<number>\",\n      \"propertyId\": \"<uuid>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"roomNumber\": \"<string>\",\n      \"pricePerNight\": \"<number>\",\n      \"propertyId\": \"<uuid>\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "guests",
+					"item": [
+						{
+							"name": "{identifier}",
+							"item": [
+								{
+									"name": "Get guest by id",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/management/guests/:identifier",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"management",
+												"guests",
+												":identifier"
+											],
+											"variable": [
+												{
+													"key": "identifier",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Retrieves guest given its id."
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/management/guests/:identifier",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"management",
+														"guests",
+														":identifier"
+													],
+													"variable": [
+														{
+															"key": "identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Update guest",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/management/guests/:identifier",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"management",
+												"guests",
+												":identifier"
+											],
+											"variable": [
+												{
+													"key": "identifier",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Update guest given its id"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/management/guests/:identifier",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"management",
+														"guests",
+														":identifier"
+													],
+													"variable": [
+														{
+															"key": "identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Delete guest",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/management/guests/:identifier",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"management",
+												"guests",
+												":identifier"
+											],
+											"variable": [
+												{
+													"key": "identifier",
+													"value": "<uuid>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Delete guest by its id"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/management/guests/:identifier",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"management",
+														"guests",
+														":identifier"
+													],
+													"variable": [
+														{
+															"key": "identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get all guests",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/management/guests",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"management",
+										"guests"
+									]
+								},
+								"description": "Retrieves a list of all guests."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/management/guests",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"management",
+												"guests"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\"\n  },\n  {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Insert guest",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/management/guests",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"management",
+										"guests"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/management/guests",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"management",
+												"guests"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<uuid>\",\n  \"name\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}
